@@ -44,10 +44,10 @@ public class AdminDialogo : MonoBehaviour
 			return;
 		}
 
-		if (ImputManager.GetInstance().GetSubmitPressed())
-		{
-			ContinuarHistoria();
-		}
+		//if (ImputManager.GetInstance().GetSubmitPressed())
+		//{
+		//	ContinuarHistoria();
+		//}
 	}
 
 	public void EntrarModoDialogo(TextAsset inkJSON)
