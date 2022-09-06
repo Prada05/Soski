@@ -92,13 +92,13 @@ public class AdminDialogo : MonoBehaviour
 		}
 	}
 
-	private void DisplayChoices()
-	{
-		List <Desiciones> DesicionActual = HistoriaActual.DesicionActual;
+	//private void DisplayChoices()
+	//{
+	//	List <Desiciones> DesicionActual = HistoriaActual.DesicionActual;
 
-		if(DesicionActual.Count > Desicion.Length)
-		{
-			Debug.LogError("Mas desiciones fueron dadas que la interfaz no puede soportar. Numero de desiciones dadas: " + DesicionActual.Count);
-		}
-	}
+	//	if(DesicionActual.Count > Desicion.Length)
+	//	{
+	//		Debug.LogError("Mas desiciones fueron dadas que la interfaz no puede soportar. Numero de desiciones dadas: " + DesicionActual.Count);
+	//	}
+	//}
 }
