@@ -11,6 +11,12 @@ public class AdminDialogo : MonoBehaviour
 	[SerializeField] private GameObject PanelDialogo;
 	[SerializeField] private TextMeshProUGUI TextoDialogo;
 
+	[Header("Interfaz Desicion")]
+
+	[SerializeField] private GameObject[] Desiciones;
+
+	private TextMeshProUGUI[] TextoDesicion;
+
 	private Story HistoriaActual;
 
 	private bool DialogoSonando;
@@ -35,6 +41,14 @@ public class AdminDialogo : MonoBehaviour
 	{
 		DialogoSonando = false;
 		PanelDialogo.SetActive(false);
+
+		TextoDesicion = new TextMeshProUGUI[Desiciones.Length];
+		int index = 0;
+		foreach (GameObject Desicion in Desiciones)
+		{
+			TextoDesicion[index] = Desicion.GetComponentInChildren<TextMeshProUGUI>();
+			index++;
+		}
 	}
 
 	private void Update()
@@ -75,6 +89,16 @@ public class AdminDialogo : MonoBehaviour
 		else 
 		{
 			SalirModoDialogo();
+		}
+	}
+
+	private void DisplayChoices()
+	{
+		List <Desiciones> DesicionActual = HistoriaActual.DesicionActual;
+
+		if(DesicionActual.Count > Desicion.Length)
+		{
+			Debug.LogError("Mas desiciones fueron dadas que la interfaz no puede soportar. Numero de desiciones dadas: " + DesicionActual.Count);
 		}
 	}
 }
